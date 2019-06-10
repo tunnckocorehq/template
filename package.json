@@ -1,0 +1,17 @@
+{
+  "name": "@tunnckocore/{pkgname}",
+  "description": "{description}",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "repository": "tunnckocorehq/{pkgname}",
+  "author": "@tunnckoCore <opensource@tunnckocore.com>",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/types/index.d.ts",
+  "source": "src/index.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
