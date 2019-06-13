@@ -7,6 +7,8 @@ test_task:
   node_modules_cache:
     folder: node_modules
     fingerprint_script: cat yarn.lock
-    populate_script: yarn install && yarn add --dev @tunnckocore/{config,scripts,scripts-config}
+    populate_script: yarn install
 
-  test_script: yarn start ball
+  test_script: |
+    yarn add --dev @tunnckocore/{config,scripts,scripts-config}
+    yarn start ball
