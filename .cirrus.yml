@@ -1,8 +1,9 @@
 test_task:
   container:
     matrix:
-      - image: node:10
+      - image: node:8
       - image: node:lts
+      - image: node:12
 
   node_modules_cache:
     folder: node_modules
@@ -10,4 +11,6 @@ test_task:
     populate_script: yarn install
 
   test_script: |
+    node --version
+    yarn --version
     yarn start build
