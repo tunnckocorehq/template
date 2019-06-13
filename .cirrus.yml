@@ -10,4 +10,5 @@ test_task:
     populate_script: yarn install
 
   test_script: |
+    yarn add --dev @tunnckocore/{config,scripts,scripts-config}
     yarn start build
