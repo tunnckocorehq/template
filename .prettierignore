@@ -1,0 +1,16 @@
+node_modules
+coverage
+build
+dist
+pkg
+
+.npmrc
+*.log
+*~
+package-lock.json
+shrinkwrap.json
+
+
+LICENSE
+CHANGELOG.md
+README.md

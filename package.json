@@ -1,17 +1,42 @@
 {
-  "name": "@tunnckocore/{pkgname}",
-  "description": "{description}",
   "version": "0.1.0",
+  "name": "@tunnckocore/template",
+  "description": "WIP: some description for your template",
+  "author": "Charlike Mike Reagent <opensource@tunnckocore.com>",
+  "repository": "tunnckocorehq/template",
+  "homepage": "https://github.com/tunnckocorehq/template",
   "license": "Apache-2.0",
-  "repository": "tunnckocorehq/{pkgname}",
-  "author": "@tunnckoCore <opensource@tunnckocore.com>",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "typings": "dist/types/index.d.ts",
-  "source": "src/index.js",
-  "files": [
-    "dist"
+  "scripts": {
+    "start": "scripts",
+    "extends": "@tunnckocore/scripts-config"
+  },
+  "publishConfig": {
+    "directory": "pkg",
+    "access": "public",
+    "tag": "latest"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ]
+    ]
+  },
+  "keywords": [
+    "tunnckocorehq",
+    "template",
+    "tunnckocore-template"
   ],
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "@tunnckocore/scripts": "^1.2.5",
+    "@tunnckocore/scripts-config": "^4.0.0",
+    "@tunnckocore/config": "^4.0.0"
+  }
 }
