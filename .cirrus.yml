@@ -1,0 +1,12 @@
+test_task:
+  container:
+    matrix:
+      - image: node:10
+      - image: node:lts
+
+  node_modules_cache:
+    folder: node_modules
+    fingerprint_script: cat yarn.lock
+    populate_script: yarn install && yarn add --dev @tunnckocore/{config,scripts,scripts-config}
+
+  test_script: yarn start ball
