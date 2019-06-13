@@ -34,9 +34,5 @@
     "tunnckocore-template"
   ],
   "dependencies": {},
-  "devDependencies": {
-    "@tunnckocore/scripts": "^1.2.5",
-    "@tunnckocore/scripts-config": "^4.0.0",
-    "@tunnckocore/config": "^4.0.0"
-  }
+  "devDependencies": {}
 }
