@@ -1,0 +1,13 @@
+test_task:
+  container:
+    matrix:
+      - image: node:8
+      - image: node:lts
+      - image: node:12
+  node_modules_cache:
+    folder: node_modules
+    fingerprint_script:
+      - node --version
+      - cat yarn.lock
+    populate_script: yarn install --prefer-offline --pure-lockfile --frozen-lockfile || yarn install --pure-lockfile --frozen-lockfile
+  test_script: yarn start build
