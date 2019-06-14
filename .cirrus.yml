@@ -19,7 +19,8 @@
 
 windows_task:
   windows_container:
-    image: cirrusci/windowsservercore:2016
+    image: cirrusci/windowsservercore:2019
+    os_version: 2019
   env:
     CIRRUS_SHELL: powershell
   yarn_script:
@@ -29,7 +30,7 @@ windows_task:
   node_modules_cache:
     folder: node_modules
     fingerprint_script: print yarn.lock
-    populate_script: yarn install --prefer-offline --pure-lockfile --frozen-lockfile || yarn install --pure-lockfile --frozen-lockfile
+    populate_script: yarn inst-offline -or yarn inst-online
   build_script: yarn start build
 
 macOS_task:
@@ -42,7 +43,7 @@ macOS_task:
   node_modules_cache:
     folder: node_modules
     fingerprint_script: cat yarn.lock
-    populate_script: yarn install --prefer-offline --pure-lockfile --frozen-lockfile || yarn install --pure-lockfile --frozen-lockfile
+    populate_script: yarn inst-offline || yarn inst-online
   build_script: yarn start build
 
 linux_task:
@@ -51,5 +52,5 @@ linux_task:
   node_modules_cache:
     folder: node_modules
     fingerprint_script: cat yarn.lock
-    populate_script: yarn install --prefer-offline --pure-lockfile --frozen-lockfile || yarn install --pure-lockfile --frozen-lockfile
+    populate_script: yarn inst-offline || yarn inst-online
   build_script: yarn start build
