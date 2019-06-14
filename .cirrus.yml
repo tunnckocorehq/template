@@ -1,13 +1,55 @@
-test_task:
-  container:
-    matrix:
-      - image: node:8
-      - image: node:lts
-      - image: node:12
+# linux_task:
+#   container:
+#     matrix:
+#       - image: node:8
+#       - image: node:lts
+#       - image: node:12
+#   node_modules_cache:
+#     folder: node_modules
+#     fingerprint_script:
+#       - node --version
+#       - cat yarn.lock
+#     populate_script: yarn install --prefer-offline --pure-lockfile --frozen-lockfile || yarn install --pure-lockfile --frozen-lockfile
+#   build_script: yarn start build
+
+# windows_task:
+#   windows_container:
+#     image: cirrusci/windowsservercore:2019
+#     os_version: 2019
+
+windows_task:
+  windows_container:
+    image: cirrusci/windowsservercore:2016
+  env:
+    CIRRUS_SHELL: powershell
+  yarn_script:
+    - Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    - choco install yarn -y
+    - refreshenv
   node_modules_cache:
     folder: node_modules
-    fingerprint_script:
-      - node --version
-      - cat yarn.lock
+    fingerprint_script: print yarn.lock
     populate_script: yarn install --prefer-offline --pure-lockfile --frozen-lockfile || yarn install --pure-lockfile --frozen-lockfile
-  test_script: yarn start build
+  build_script: yarn start build
+
+macOS_task:
+  osx_instance:
+    image: mojave-xcode-10.2
+  yarn_script:
+    - brew install yarn
+  environment:
+    CSC_IDENTITY_AUTO_DISCOVERY: false
+  node_modules_cache:
+    folder: node_modules
+    fingerprint_script: cat yarn.lock
+    populate_script: yarn install --prefer-offline --pure-lockfile --frozen-lockfile || yarn install --pure-lockfile --frozen-lockfile
+  build_script: yarn start build
+
+linux_task:
+  container:
+    image: node:latest
+  node_modules_cache:
+    folder: node_modules
+    fingerprint_script: cat yarn.lock
+    populate_script: yarn install --prefer-offline --pure-lockfile --frozen-lockfile || yarn install --pure-lockfile --frozen-lockfile
+  build_script: yarn start build
