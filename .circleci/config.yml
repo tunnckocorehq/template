@@ -55,31 +55,31 @@ references:
       echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
 
 jobs:
-  cold_node_8:
+  node_8:
     <<: *node-8
     steps:
       - checkout
       - run: *yarn
       - run: yarn start build
       - save_cache: *save-cache
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
+      # - persist_to_workspace:
+      #     root: .
+      #     paths:
+      #       - .
   node_10:
     <<: *node-10
     steps:
       - checkout
-      - attach_workspace: *attach-ws
-      - restore_cache: *restore-cache
+      - run: *yarn
       - run: yarn start build
+      - save_cache: *save-cache
   node_12:
     <<: *node-12
     steps:
       - checkout
-      - attach_workspace: *attach-ws
-      - restore_cache: *restore-cache
+      - run: *yarn
       - run: yarn start build
+      - save_cache: *save-cache
   # test-node-10:
   #   <<: *node-10
   #   steps:
@@ -145,13 +145,9 @@ workflows:
       #                    typecheck
       # install -> lint -> test node 8  -> build -> deploy (only on master)
       #                    test node 10
-      - cold_node_8
-      - node_10:
-          requires:
-            - cold_node_8
-      - node_12:
-          requires:
-            - cold_node_8
+      - node_8
+      - node_10
+      - node_12
       # - lint:
       #     requires:
       #       - install
