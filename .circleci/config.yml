@@ -61,7 +61,7 @@ jobs:
       - checkout
       - run: *yarn
       - run: yarn start build
-      - save_cache: *save-cache
+      # - save_cache: *save-cache
       - persist_to_workspace:
           root: .
           paths:
@@ -71,14 +71,14 @@ jobs:
     steps:
       - checkout
       - attach_workspace: *attach-ws
-      - restore_cache: *restore-cache
+      # - restore_cache: *restore-cache
       - run: yarn start build
   node_12:
     <<: *node-12
     steps:
       - checkout
       - attach_workspace: *attach-ws
-      - restore_cache: *restore-cache
+      # - restore_cache: *restore-cache
       - run: yarn start build
   # test-node-10:
   #   <<: *node-10
