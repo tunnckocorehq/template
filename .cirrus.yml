@@ -30,7 +30,7 @@ windows_task:
   node_modules_cache:
     folder: node_modules
     fingerprint_script: print yarn.lock
-    populate_script: yarn inst-offline -or yarn inst-online
+    populate_script: yarn inst-online
   build_script: yarn start build
 
 macOS_task:
