@@ -145,13 +145,13 @@ workflows:
       #                    typecheck
       # install -> lint -> test node 8  -> build -> deploy (only on master)
       #                    test node 10
-      - node_8
+      - cold_node_8
       - node_10:
           requires:
-            - node_8
+            - cold_node_8
       - node_12:
           requires:
-            - node_8
+            - cold_node_8
       # - lint:
       #     requires:
       #       - install
