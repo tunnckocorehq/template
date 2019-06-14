@@ -74,7 +74,7 @@ jobs:
       - restore_cache: *restore-cache
       - run: yarn start build
   node_12:
-    <<: *node-128
+    <<: *node-12
     steps:
       # - checkout
       - attach_workspace: *attach-ws
@@ -148,7 +148,6 @@ workflows:
       - node_8
       - node_10
       - node_12
-
       # - lint:
       #     requires:
       #       - install
