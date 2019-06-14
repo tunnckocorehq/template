@@ -69,14 +69,14 @@ jobs:
   node_10:
     <<: *node-10
     steps:
-      # - checkout
+      - checkout
       - attach_workspace: *attach-ws
       - restore_cache: *restore-cache
       - run: yarn start build
   node_12:
     <<: *node-12
     steps:
-      # - checkout
+      - checkout
       - attach_workspace: *attach-ws
       - restore_cache: *restore-cache
       - run: yarn start build
