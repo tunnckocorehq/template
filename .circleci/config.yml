@@ -19,11 +19,11 @@ references:
       - image: circleci/node:12
   restore-cache: &restore-cache
     keys:
-      - v3-monorepo-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
-      - v3-monorepo-{{ checksum "yarn.lock" }}
-      - v3-monorepo-
+      - v4-monorepo-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+      - v4-monorepo-{{ checksum "yarn.lock" }}
+      - v4-monorepo-
   save-cache: &save-cache
-    key: v3-monorepo-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
+    key: v4-monorepo-{{ checksum "yarn.lock" }}-{{ checksum ".circleci/config.yml" }}
     paths:
       - ~/.ssh
       - ~/.cache/yarn
