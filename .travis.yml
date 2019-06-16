@@ -4,10 +4,10 @@ node_js:
   - '10'
   - 'node'
 
-os:
-  - linux
-  - osx
-  - windows
+# os:
+#   - linux
+#   - osx
+#   - windows
 
 # cache:
 #   yarn: true
@@ -24,6 +24,12 @@ matrix:
         yarn: true
         directories:
           - 'node_modules'
+  exclude:
+    - os: windows
+      sudo: false
+      cache:
+        yarn: false
+        timeout: 1000
 
 notifications:
   email: false
