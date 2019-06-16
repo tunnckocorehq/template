@@ -17,19 +17,22 @@ node_js:
 matrix:
   fast_finish: true
   include:
+    - os: windows
+      cache:
+        yarn: false
+        timeout: 2000
     - os: osx
+      sudo: false
+      cache:
+        yarn: true
+        directories:
+          - 'node_modules'
     - os: linux
       sudo: false
       cache:
         yarn: true
         directories:
           - 'node_modules'
-  exclude:
-    - os: windows
-      sudo: false
-      cache:
-        yarn: false
-        timeout: 1000
 
 notifications:
   email: false
