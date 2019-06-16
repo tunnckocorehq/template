@@ -10,9 +10,10 @@
     "lint": "yarn scripts devest lint",
     "test": "yarn scripts devest test",
     "prebuild": "yarn lint && yarn test",
-    "build": "yarn scripts pika-pack build --out dist",
+    "build": "rm -rf dist && yarn scripts pika-pack build --out dist",
     "status": "badgen --subject build --status passing --color green > dist/badge.svg",
-    "now-build": "yarn build && yarn status"
+    "now-build": "yarn build && yarn status",
+    "postnow-build": "echo \"exit $?\""
   },
   "publishConfig": {
     "access": "public",
