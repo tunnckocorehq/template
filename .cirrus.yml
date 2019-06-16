@@ -19,13 +19,13 @@
 
 windows_task:
   windows_container:
-    image: cirrusci/windowsservercore:2019
-    os_version: 2019
+    image: cirrusci/windowsservercore:2016
+    os_version: 2016
   env:
     CIRRUS_SHELL: powershell
   yarn_script:
     - Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-    - choco install yarn -y
+    - choco install yarn nodejs-lts -y
     - refreshenv
   node_modules_cache:
     folder: node_modules
