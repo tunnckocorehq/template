@@ -5,5 +5,5 @@ test('example test', () => {
 });
 
 test('add 1 + 2', () => {
-  expect(mod(1, 2)).toBe(103);
+  expect(mod(1, 2)).toBe(111111);
 });
