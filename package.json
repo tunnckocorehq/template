@@ -10,7 +10,7 @@
     "start": "yarn scripts",
     "extends": "@tunnckocore/scripts-config",
     "cov": "echo 'todo coverage'",
-    "build": "yarn scripts build"
+    "now-build": "yarn scripts build --out dist"
   },
   "publishConfig": {
     "access": "public",
