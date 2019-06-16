@@ -4,35 +4,18 @@ node_js:
   - '10'
   - 'node'
 
-# os:
-#   - linux
-#   - osx
-#   - windows
+os:
+  - linux
+  - osx
+  # - windows
 
-# cache:
-#   yarn: true
-#   directories:
-#     - 'node_modules'
+cache:
+  yarn: true
+  directories:
+    - 'node_modules'
 
 matrix:
   fast_finish: true
-  include:
-    - os: windows
-      cache:
-        yarn: false
-        timeout: 2000
-    - os: osx
-      sudo: false
-      cache:
-        yarn: true
-        directories:
-          - 'node_modules'
-    - os: linux
-      sudo: false
-      cache:
-        yarn: true
-        directories:
-          - 'node_modules'
 
 notifications:
   email: false
