@@ -11,9 +11,7 @@
     "test": "yarn scripts devest test",
     "prebuild": "yarn lint && yarn test",
     "build": "rm -rf dist && yarn scripts pika-pack build --out dist",
-    "status": "badgen --subject build --status passing --color green > dist/badge.svg",
-    "now-build": "yarn build && yarn status",
-    "postnow-build": "echo \"exit $?\""
+    "now-build": "yarn build"
   },
   "publishConfig": {
     "access": "public",
