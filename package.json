@@ -8,7 +8,6 @@
   "license": "Apache-2.0",
   "scripts": {
     "start": "yarn scripts",
-    "test": "yarn scripts pika-pack build",
     "extends": "@tunnckocore/scripts-config",
     "cov": "echo 'todo coverage'"
   },
