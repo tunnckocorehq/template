@@ -1,0 +1,27 @@
+sudo: false
+language: node_js
+
+node_js:
+  - "10"
+  - "node"
+
+os:
+  - linux
+  - osx
+  - windows
+
+cache:
+  yarn: true
+  directories:
+    - "node_modules"
+
+matrix:
+  fast_finish: true
+
+notifications:
+  email: false
+
+script:
+  - yarn start test
+
+after_success: if [[ "$TRAVIS_OS_NAME" == 'linux' ]]; then yarn cov; fi

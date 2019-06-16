@@ -7,10 +7,10 @@
   "homepage": "https://github.com/tunnckocorehq/template",
   "license": "Apache-2.0",
   "scripts": {
-    "inst-offline": "yarn install --prefer-offline --pure-lockfile --frozen-lockfile",
-    "inst-online": "yarn install --pure-lockfile --frozen-lockfile",
     "start": "yarn scripts",
-    "extends": "@tunnckocore/scripts-config"
+    "test": "yarn scripts pika-pack build",
+    "extends": "@tunnckocore/scripts-config",
+    "cov": "echo 'todo coverage'"
   },
   "publishConfig": {
     "access": "public",
