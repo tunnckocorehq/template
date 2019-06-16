@@ -10,7 +10,10 @@
     "lint": "yarn scripts devest lint",
     "test": "yarn scripts devest test",
     "build": "yarn scripts pika-pack build --out dist",
-    "now-build": "yarn lint && yarn test && yarn build"
+    "status:pass": "badgen --subject build --status passing --color green > dist/badge.svg",
+    "status:fail": "badgen --subject build --status failing --color red > dist/badge.svg",
+    "pkg": "yarn lint && yarn test && yarn build",
+    "now-build": "(yarn pkg && yarn status:pass) || yarn status:fail"
   },
   "publishConfig": {
     "access": "public",
@@ -26,9 +29,6 @@
       ],
       [
         "@pika/plugin-build-node"
-      ],
-      [
-        "@pika/plugin-build-web"
       ]
     ]
   },
@@ -50,6 +50,7 @@
     "@tunnckocore/scripts": "^1.3.0",
     "@tunnckocore/scripts-config": "^4.0.2",
     "@types/jest": "^24.0.15",
+    "badgen-cli": "^0.1.1",
     "jest": "^24.8.0",
     "jest-runner-eslint": "^0.7.4"
   }

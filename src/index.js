@@ -1,7 +1,7 @@
 /**
  * Program main entry point.
  */
-export default () => {};
+export default (a, b) => a + b + 100;
 
 /**
  * When CLI interface is needed.

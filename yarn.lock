@@ -1413,6 +1413,25 @@ babel-preset-jest@^24.6.0:
     "@babel/plugin-syntax-object-rest-spread" "^7.0.0"
     babel-plugin-jest-hoist "^24.6.0"
 
+badgen-cli@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/badgen-cli/-/badgen-cli-0.1.1.tgz#0b4124cb895c6f5abd5e9ef8243ddac2351a1dfe"
+  integrity sha512-CuxgBd0meAR8bjxcayZGJ2n8mWzmYLVCIcp9RF2BBAlHqSgmbs3vqeYGTXgMjmUdRmIgpVis+ESzjJ4hvu8eXg==
+  dependencies:
+    badgen "^2.7.1"
+    badgen-icons "^0.8.0"
+    mri "^1.1.4"
+
+badgen-icons@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/badgen-icons/-/badgen-icons-0.8.0.tgz#4ad5baa59fb1ec507e68f383762db40b6c3536a7"
+  integrity sha512-UhYIJt9Mh++9rj2Fk5V38WdqqKJ5gBPm7LpIy+df2F9T33YAAUSVVVNSGb/ZJfRv2MhV+DzgHoLCH0qV6oPdKg==
+
+badgen@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/badgen/-/badgen-2.7.1.tgz#2150e250117298f7cdc9ee3ca180ccb0257012c0"
+  integrity sha512-CLaw1TOll1T4H0GPq521IuK+mQ5QvdOAqQy6kwCFrs6raWZ375ceby8WO4xINZcFB9M7eR7EgVEHLZhbyKp3Ow==
+
 bail@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/bail/-/bail-1.0.4.tgz#7181b66d508aa3055d3f6c13f0a0c720641dde9b"
