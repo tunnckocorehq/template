@@ -9,11 +9,10 @@
   "scripts": {
     "lint": "yarn scripts devest lint",
     "test": "yarn scripts devest test",
+    "prebuild": "yarn lint && yarn test",
     "build": "yarn scripts pika-pack build --out dist",
-    "status:pass": "badgen --subject build --status passing --color green > dist/badge.svg",
-    "status:fail": "badgen --subject build --status failing --color red > dist/badge.svg",
-    "pkg": "yarn lint && yarn test && yarn build",
-    "now-build": "(yarn pkg && yarn status:pass) || yarn status:fail"
+    "status": "badgen --subject build --status passing --color green > dist/badge.svg",
+    "now-build": "yarn build && yarn status"
   },
   "publishConfig": {
     "access": "public",
