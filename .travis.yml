@@ -7,10 +7,10 @@ node_js:
 os:
   - linux
   - osx
-  # - windows
+  - windows
 
 cache:
-  yarn: true
+  # yarn: true
   directories:
     - 'node_modules'
 
