@@ -10,9 +10,7 @@ os:
   - osx
   - windows
 
-cache:
-  directories:
-    - 'node_modules'
+cache: yarn
 
 notifications:
   email: false
