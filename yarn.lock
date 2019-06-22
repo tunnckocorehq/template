@@ -663,38 +663,38 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@hela/cli@^3.0.0-alpha.45":
-  version "3.0.0-alpha.45"
-  resolved "https://registry.yarnpkg.com/@hela/cli/-/cli-3.0.0-alpha.45.tgz#e91223c6bd13e2a13dc780fc1f304370dac9ffdf"
-  integrity sha512-GdcbtAiCbVZdnrGnq6PNhrfzKrMdQ6MwyOizEHffhzGW6Mg22PEdeWMXfxP1qUGV334iRzM4GuX6spauqThtaw==
+"@hela/cli@^3.0.0-alpha.48":
+  version "3.0.0-alpha.48"
+  resolved "https://registry.yarnpkg.com/@hela/cli/-/cli-3.0.0-alpha.48.tgz#70174fcec9af9ec2b24ba72952b763ea91077f71"
+  integrity sha512-7smT6I4tEyS1vDaAv9NJh5RV9xx8VEmuTHvEeMSXCtI7/+j6S6SjjfzxON/vszqiN54f3QX4nAxTA8VA2eJWSw==
   dependencies:
-    "@hela/core" "^3.0.0-alpha.45"
+    "@hela/core" "^3.0.0-alpha.48"
     cosmiconfig "^5.2.1"
     esm "^3.2.25"
     find-file-up "^2.0.1"
 
-"@hela/core@^3.0.0-alpha.45":
-  version "3.0.0-alpha.45"
-  resolved "https://registry.yarnpkg.com/@hela/core/-/core-3.0.0-alpha.45.tgz#84d71446703c9a302c7c5217eae7cee098c8c86d"
-  integrity sha512-xCxNnODJ5jfJq14Jt92335iWhL5CzU4fBatwez/1hsULGEfozZl7aKr0DjU8fdhlYfJ+2F5Cci6VoO9LUTPwcg==
+"@hela/core@^3.0.0-alpha.48":
+  version "3.0.0-alpha.48"
+  resolved "https://registry.yarnpkg.com/@hela/core/-/core-3.0.0-alpha.48.tgz#29d3b2e95658e359303256f96917c2b56056a0a2"
+  integrity sha512-ZnlI6LDOr3hxzhhZLPnDeQDJDe3TVIKCT3LZyJ5kE8gHe5A7Ozfy9SuEGykVtsPZO2CGsdOgpbzM3UWpp75F6w==
   dependencies:
     all-module-paths "^0.7.1"
     dargs "^6.1.0"
     execa "^2.0.0-alpha.0"
     sade "^1.4.1"
 
-"@hela/dev@^3.0.0-alpha.46":
-  version "3.0.0-alpha.46"
-  resolved "https://registry.yarnpkg.com/@hela/dev/-/dev-3.0.0-alpha.46.tgz#f7dac649a663a9a9786af5e37955d7ea56dd6a3f"
-  integrity sha512-JqWcwNwlU5qttX+OHfTnDFHTd9qOyShEjWmGTv80N2dXA+joHE2HVI8zbuftZeyInGtMOE2V7IKir+DrQFA3/A==
+"@hela/dev@^3.0.0-alpha.48":
+  version "3.0.0-alpha.48"
+  resolved "https://registry.yarnpkg.com/@hela/dev/-/dev-3.0.0-alpha.48.tgz#0d383019d8099bd761a660b134987b5bcb1b9e28"
+  integrity sha512-JgxhVM/S1VMB1ALnsrX5I8q3/qgAkrqd1Y9GbztJ2i1vkghIh+sELEinWY6/Q4jRyLVYYQ6p4vETIer1P6fyKg==
   dependencies:
     "@babel/core" "^7.4.5"
     "@babel/plugin-syntax-dynamic-import" "^7.2.0"
     "@babel/plugin-syntax-import-meta" "^7.2.0"
     "@babel/preset-env" "^7.4.5"
     "@babel/preset-typescript" "^7.3.3"
-    "@hela/core" "^3.0.0-alpha.45"
-    "@tunnckocore/jest-runner-babel" "^3.0.0-alpha.45"
+    "@hela/core" "^3.0.0-alpha.48"
+    "@tunnckocore/jest-runner-babel" "^3.0.0-alpha.48"
     "@tunnckocore/scripts" "^1.3.0"
     babel-plugin-dynamic-import-node-babel-7 "^2.0.7"
     gitcommit "^1.0.14"
@@ -901,10 +901,10 @@
     p-map-series "^2.0.0"
     split-cmd "^1.0.0"
 
-"@tunnckocore/jest-runner-babel@^3.0.0-alpha.45":
-  version "3.0.0-alpha.45"
-  resolved "https://registry.yarnpkg.com/@tunnckocore/jest-runner-babel/-/jest-runner-babel-3.0.0-alpha.45.tgz#602b9a848164b29ca55e5e8b9faf5aec844a18e3"
-  integrity sha512-JD+gAl2YOWgzmKfS9gnJask4JxupKsgYv5CFNcegDO0Yjo6qUpXH2U5prjLZW0MW9Z6zCWaYGCspPfuBnWenxQ==
+"@tunnckocore/jest-runner-babel@^3.0.0-alpha.48":
+  version "3.0.0-alpha.48"
+  resolved "https://registry.yarnpkg.com/@tunnckocore/jest-runner-babel/-/jest-runner-babel-3.0.0-alpha.48.tgz#f63c1ab2612c87f7b3085d373a1e0284f1458ae2"
+  integrity sha512-dgmhQ+i6qWRlhpYQV9M10BloDK6+6ldp4o4HDDGstUisz9nqnm9drcj4XYRUAhwG6X9sKh1iIIPbMABWymZ1zg==
   dependencies:
     "@babel/core" "^7.4.5"
     create-jest-runner "^0.5.3"
