@@ -22,7 +22,7 @@ A repository template for all repos
 
 <!-- dynamic badges -->
 
-[nowci-img]: https://badgen.net/github/status/tunnckocorehq/template/master/now?label=build&icon=https://icons.charlike-oss.now.sh/zeit-now-white.svg
+[nowci-img]: https://badgen.net/github/status/tunnckocorehq/template/master/now?label=build&icon=now
 [nowci-url]: https://tunnckocore.com/zeit-now-as-ci
 
 [npm-img]: https://badgen.net/npm/v/@tunnckocore/template?icon=npm
