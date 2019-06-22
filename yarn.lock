@@ -683,10 +683,10 @@
     execa "^2.0.0-alpha.0"
     sade "^1.4.1"
 
-"@hela/dev@^3.0.0-alpha.48":
-  version "3.0.0-alpha.48"
-  resolved "https://registry.yarnpkg.com/@hela/dev/-/dev-3.0.0-alpha.48.tgz#0d383019d8099bd761a660b134987b5bcb1b9e28"
-  integrity sha512-JgxhVM/S1VMB1ALnsrX5I8q3/qgAkrqd1Y9GbztJ2i1vkghIh+sELEinWY6/Q4jRyLVYYQ6p4vETIer1P6fyKg==
+"@hela/dev@^3.0.0-alpha.49":
+  version "3.0.0-alpha.49"
+  resolved "https://registry.yarnpkg.com/@hela/dev/-/dev-3.0.0-alpha.49.tgz#e563f5714702bcd99381c7843557e1739a46d250"
+  integrity sha512-/KOzDgKwxM+PkOsQYkSy987brFOLq+JTb+BFbGq39ta6UyHgmGWf5LaSAWzIUTHsKXtTKkUy5gV3DzaE18wBfg==
   dependencies:
     "@babel/core" "^7.4.5"
     "@babel/plugin-syntax-dynamic-import" "^7.2.0"

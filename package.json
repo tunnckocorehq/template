@@ -10,7 +10,7 @@
     "start": "yarn hela",
     "test": "yarn hela test",
     "lint": "yarn hela lint",
-    "commit": "git add -A && yarn hela commit",
+    "commit": "yarn hela commit",
     "now-build": "yarn hela all --all"
   },
   "publishConfig": {
@@ -27,7 +27,7 @@
   "dependencies": {},
   "devDependencies": {
     "@hela/cli": "^3.0.0-alpha.48",
-    "@hela/dev": "^3.0.0-alpha.48",
+    "@hela/dev": "^3.0.0-alpha.49",
     "@tunnckocore/config": "^4.0.1"
   },
   "jest-runner-eslint": {
