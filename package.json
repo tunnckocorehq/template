@@ -9,9 +9,7 @@
   "scripts": {
     "start": "yarn hela",
     "test": "yarn hela test",
-    "lint": "yarn hela lint",
-    "commit": "yarn hela commit",
-    "now-build": "yarn hela all --all"
+    "lint": "yarn hela lint"
   },
   "publishConfig": {
     "access": "public",
@@ -26,9 +24,10 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@hela/cli": "^3.0.0-alpha.48",
-    "@hela/dev": "^3.0.0-alpha.49",
-    "@tunnckocore/config": "^4.0.1"
+    "@hela/cli": "^3.0.0-alpha.65",
+    "@hela/dev": "^3.0.0-alpha.66",
+    "@standard-release/cli": "^2.4.4",
+    "@tunnckocore/config": "^5.0.1"
   },
   "jest-runner-eslint": {
     "cliOptions": {

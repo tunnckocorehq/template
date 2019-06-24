@@ -1,0 +1,190 @@
+version: 2
+
+workdir: &workdir
+  working_directory: ~/repo
+
+# node8osx: &node8osx
+#   <<: *workdir
+#   macos:
+#     xcode: "9.2"
+
+# node10osx: &node10osx
+#   <<: *workdir
+#   macos:
+#     xcode: "9"
+
+nodeLTS: &nodeLTS
+  <<: *workdir
+  docker:
+    - image: circleci/node:10
+
+nodeCurrent: &nodeCurrent
+  <<: *workdir
+  docker:
+    - image: circleci/node:12
+
+restore_modules_cache: &restore_modules_cache
+  restore_cache:
+    keys:
+      - repo-{{ checksum "yarn.lock" }}
+      # fallback to using the latest cache if no exact match is found
+      - repo-
+
+# jobinstall: &jobinstall
+#   steps:
+#     - checkout
+#     # - *restore_modules_cache
+#     - run:
+#         name: Installing PNPM package manager
+#         command: sudo npm i -g pnpm
+#     - run:
+#         name: Installing project dependencies
+#         command: pnpm run inst
+#     - save_cache:
+#         key: repo-{{ checksum "yarn.lock" }}
+#         paths: node_modules
+#     - run:
+#         name: Remove node_modules to cleanup workspace
+#         command: rm -rf node_modules
+
+jobs:
+  # install-nodeLTS:
+  #   <<: *nodeLTS
+  #   <<: *jobinstall
+
+  test-nodeLTS:
+    <<: *nodeLTS
+    steps:
+      - checkout
+      - *restore_modules_cache
+      - run:
+          name: Installing project dependencies
+          command: yarn install --prefer-offline || yarn install
+      - run:
+          name: Testing your project
+          command: yarn start test
+      - save_cache:
+          key: repo-{{ checksum "yarn.lock" }}
+          paths: node_modules
+
+  test-nodeCurrent:
+    <<: *nodeCurrent
+    steps:
+      - checkout
+      - *restore_modules_cache
+      - run:
+          name: Installing project dependencies
+          command: yarn install --prefer-offline || yarn install
+      - run:
+          name: Testing your project
+          command: yarn start test
+      - save_cache:
+          key: repo-{{ checksum "yarn.lock" }}
+          paths: node_modules
+      # The only difference with above nodeLTS test
+      - run:
+          name: Sending test coverage to CodeCov
+          command: bash <(curl -s https://codecov.io/bash)
+
+  # install-node8osx:
+  #   <<: *node8osx
+  #   <<: *jobinstall
+
+  # test-node8osx:
+  #   <<: *node8osx
+  #   <<: *jobtest
+
+  # install-node10osx:
+  #   <<: *node10osx
+  #   <<: *jobinstall
+
+  # test-node10osx:
+  #   <<: *node10osx
+  #   <<: *jobtest
+
+  build:
+    <<: *nodeCurrent
+    steps:
+      - checkout
+      - *restore_modules_cache
+      - run:
+          name: Bundling your awesome project
+          command: yarn start build || echo "No build step."
+
+  publish:
+    <<: *nodeCurrent
+    steps:
+      - checkout
+      - *restore_modules_cache
+      - run:
+          name: Releasing and publishing
+          command: yarn standard-release
+
+  dry-publish:
+    <<: *nodeCurrent
+    steps:
+      - checkout
+      - *restore_modules_cache
+      - run:
+          name: Releasing and publishing
+          command: yarn standard-release --dry
+
+workflows:
+  version: 2
+  automated:
+    jobs:
+      # Linux
+      - test-nodeLTS
+      - test-nodeCurrent
+
+      # - install-nodeLTS
+      # - test-nodeLTS:
+      #     requires:
+      #       - install-nodeLTS
+      # - install-nodeCurrent
+      # - test-nodeCurrent:
+      #     requires:
+      #       - install-nodeCurrent
+      # OSX
+      # - install-node8osx
+      # - test-node8osx:
+      #     requires:
+      #       - install-node8osx
+      # - install-node10osx
+      # - test-node10osx:
+      #     requires:
+      #       - install-node10osx
+
+      - build:
+          requires:
+            # - test-node8osx
+            # - test-node10osx
+            - test-nodeLTS
+            - test-nodeCurrent
+
+      # Dry run of NPM publish, done by `@standard-release/cli`
+      # Executed on PRs only, ignores `master` branch
+      - dry-publish:
+          requires:
+            # - test-node8osx
+            # - test-node10osx
+            - test-nodeLTS
+            - test-nodeCurrent
+            - build
+          filters:
+            branches:
+              ignore: master
+          context: org-global
+
+      # Executed only on `master` branch
+      - publish:
+          requires:
+            # - test-node8osx
+            # - test-node10osx
+            - test-nodeLTS
+            - test-nodeCurrent
+            - build
+          filters:
+            branches:
+              only: master
+          context: org-global
