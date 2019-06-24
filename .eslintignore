@@ -1,5 +1,6 @@
 # Build environment
 dist
+*.d.ts
 
 # Package managers lockfiles
 package-lock.json

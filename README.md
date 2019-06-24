@@ -1,7 +1,7 @@
 # template
 A repository template for all repos
 
-[![Now CI Status][nowci-img]][nowci-url]
+[![CI Status][circleci-img]][circleci-url]
 [![npm version][npm-img]][npm-url]
 [![Mozilla Public License 2.0][license-img]][license-url]
 [![Keybase][keybase-img]][keybase-url]
@@ -22,14 +22,14 @@ A repository template for all repos
 
 <!-- dynamic badges -->
 
-[nowci-img]: https://badgen.net/github/status/tunnckocorehq/template/master/now?label=build&icon=now
-[nowci-url]: https://tunnckocore.com/zeit-now-as-ci
+[circleci-img]: https://badgen.net/circleci/github/tunnckocorehq/template/master?icon=circleci
+[circleci-url]: https://circleci.com/gh/tunnckocorehq/template/tree/master
 
 [npm-img]: https://badgen.net/npm/v/@tunnckocore/template?icon=npm
 [npm-url]: https://npmjs.com/package/@tunnckocore/template
 
-[license-img]: https://badgen.net/github/license/tunnckoCoreHQ/template
-[license-url]: https://github.com/tunnckoCoreHQ/template/tree/master/LICENSE
+[license-img]: https://badgen.net/github/license/tunnckocorehq/template
+[license-url]: https://github.com/tunnckocorehq/template/tree/master/LICENSE
 
-[codecov-img]: https://badgen.net/codecov/c/github/tunnckoCoreHQ/template/master?icon=codecov
-[codecov-url]: https://codecov.io/gh/tunnckoCoreHQ/template
+[codecov-img]: https://badgen.net/codecov/c/github/tunnckocorehq/template/master?icon=codecov
+[codecov-url]: https://codecov.io/gh/tunnckocorehq/template
